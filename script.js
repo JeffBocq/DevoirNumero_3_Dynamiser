@@ -1,3 +1,4 @@
+// Modif pour cause de push non vu sur GitHub
 // Affectation de l'objet Button sur une data
 const theButton = document.querySelector("button");
 // Si le bouton a été trouvé on applique les transformations comportementales
@@ -103,13 +104,15 @@ function PerformActionsOnButtonPress()
         SendFormDataToTheServer();
         EraseFormFieldsContent();
     }
+    else
+    {
+      ShowErrorMessage();      
+    }
 }
 
-function verifyChampDeFormulaireContent(inputDataContent){
+export function verifyChampDeFormulaireContent(inputDataContent){
   if (!inputDataContent){
     console.log("Le texte " + inputDataContent + " est vide");
-    // affichage du message d'erreur
-    ShowErrorMessage();
     return false;
   }
   // si on n'a pas renvoyé false..... on renvoit true....  
