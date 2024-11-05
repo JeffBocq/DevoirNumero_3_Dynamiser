@@ -103,13 +103,15 @@ function PerformActionsOnButtonPress()
         SendFormDataToTheServer();
         EraseFormFieldsContent();
     }
+    else
+    {
+      ShowErrorMessage();      
+    }
 }
 
-function verifyChampDeFormulaireContent(inputDataContent){
+export function verifyChampDeFormulaireContent(inputDataContent){
   if (!inputDataContent){
     console.log("Le texte " + inputDataContent + " est vide");
-    // affichage du message d'erreur
-    ShowErrorMessage();
     return false;
   }
   // si on n'a pas renvoyé false..... on renvoit true....  
