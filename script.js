@@ -1,3 +1,4 @@
+// Modif pour cause de push non vu sur GitHub
 // Affectation de l'objet Button sur une data
 const theButton = document.querySelector("button");
 // Si le bouton a été trouvé on applique les transformations comportementales
