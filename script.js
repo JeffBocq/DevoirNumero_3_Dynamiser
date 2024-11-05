@@ -1,3 +1,8 @@
+// Affectation de l'objet Button sur une data
+const theButton = document.querySelector("button");
+// Si le bouton a été trouvé on applique les transformations comportementales
+!theButton ? console.log("Bouton de formulaire non trouvé") : transformTheFormButtonManagement();
+
 // Création des données qui correspondent aux champs à tester ( type, valeur )
 // je les crée ici afin d'avoir une portée globale de ces datas dans mes fonctions
 const champPrenom = document.getElementById("first-name");
@@ -6,12 +11,39 @@ const champMessage = document.getElementById("message");
 const champErreur = document.getElementById("error-message");
 (!champPrenom)||(!champNom)||(!champMessage)||(!champErreur) ? console.log("manque au moins un champ de formulaire ou le message d'erreur") : ApplyTheFullFormFieldsManagement();
 
+function transformTheFormButtonManagement(){
+  // suppression du submit du formulaire
+  theButton.type = "button";
+  // affectation de la fonction à réaliser en cas d'appui sur le bouton
+  theButton.addEventListener("click", PerformActionsOnButtonPress);
+}
+
 function ApplyTheFullFormFieldsManagement(){
   // Ajout de listener pour masquer le message d'erreur à la saisie 
   champPrenom.addEventListener("input", IsFormCompleteAndOk);
   champNom.addEventListener("input", IsFormCompleteAndOk);
   champMessage.addEventListener("input", IsFormCompleteAndOk);
 }
+
+function InsertTheCommentInTheCurrentPage(){
+  console.log('InsertTheCommentInTheCurrentPage');
+}
+function SendFormDataToTheServer(){
+  console.log('SendFormDataToTheServer');
+}
+function EraseFormFieldsContent(){ 
+  console.log('EraseFormFieldsContent');
+}
+
+function PerformActionsOnButtonPress()
+{
+    if (IsFormCompleteAndOk()){
+        InsertTheCommentInTheCurrentPage();
+        SendFormDataToTheServer();
+        EraseFormFieldsContent();
+    }
+}
+
 
 
 function verifyChampDeFormulaireContent(inputDataContent){
