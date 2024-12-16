@@ -110,7 +110,7 @@ function PerformActionsOnButtonPress()
     }
 }
 
-export function verifyChampDeFormulaireContent(inputDataContent){
+function verifyChampDeFormulaireContent(inputDataContent){
   if (!inputDataContent){
     console.log("Le texte " + inputDataContent + " est vide");
     return false;
